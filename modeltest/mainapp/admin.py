@@ -8,7 +8,14 @@ class PersonAdmin(admin.ModelAdmin):
     search_fields = ('name', 'shirt_size')
 
 
+class RunnerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'MedalType', 'medal')
+    list_display_links = ('id', 'name', 'MedalType', 'medal')
+    # search_fields = ('name',)
+
+
 admin.site.register(Person, PersonAdmin)
+admin.site.register(Runner, RunnerAdmin)
 
 
 admin.site.site_title = 'Админ-панель "Изучение Django"'

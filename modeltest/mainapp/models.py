@@ -13,3 +13,11 @@ class Person(models.Model):
     )
     name = models.CharField(max_length=60)
     shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
+
+
+class Runner(models.Model):
+    MedalType = models.TextChoices('MedalType', 'GOLD SILVER BRONZE')
+    name = models.CharField(max_length=60)
+    medal = models.CharField(blank=True, choices=MedalType.choices, max_length=10)
+
+
